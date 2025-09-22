@@ -1,0 +1,23 @@
+
+services:
+  weaviate_anon:
+    # command line that will be run when the container starts
+    command:
+    - --host # specify the host address to bind to
+    - 0.0.0.0 # listen on all interfaces
+    - --port # specify the port number to bind to
+    - '8080'
+    - --scheme # specify the scheme (http or https)
+    - http
+    image: cr.weaviate.io/semitechnologies/weaviate:1.32.9 # name and tag of the image to create the container
+    ports:
+    - 8080:8080 # map port 8080 of the host to port 8080 of the container
+    - 50051:50051 # map port 50051 of the host to port 50051 of the container
+    restart: on-failure:0 # restart policy for the container
+    environment: # environment variables to set in the container
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      ENABLE_API_BASED_MODULES: 'true'
+      BACKUP_FILESYSTEM_PATH: '/var/lib/weaviate/backups'
+      CLUSTER_HOSTNAME: 'node1'
