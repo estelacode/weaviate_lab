@@ -1,6 +1,10 @@
 
 
 # ◻️Multimodal Search with Weaviate
+Lab to learn how to implement multimodal search using Weaviate as a vector database
+* Keyword Search
+* Multimodal Search : text and image
+
 
 ## Project Setup
 
