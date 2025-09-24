@@ -1,6 +1,6 @@
 
 
-## ◻️ STEPS TO USE WEAVIATE WITH PYTHON
+## ◻️Multimodal Search with Weaviate
 
 # Initial Project Setup
 1. Create Virtual Environment
